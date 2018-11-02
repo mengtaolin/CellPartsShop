@@ -69,31 +69,6 @@
 									Item 1
 								</a>
 							</li>
-							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right">
-									Item 2
-								</a>
-							</li>
-							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right">
-									Item 3
-								</a>
-							</li>
-							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right">
-									Item 4
-								</a>
-							</li>
-							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right">
-									Item 5
-								</a>
-							</li>
-							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right">
-									Item 6
-								</a>
-							</li>
 						</ul>
 					</div>
 				</div>
@@ -102,7 +77,7 @@
 			<div class="mui-inner-wrap">
 				<header class="mui-bar mui-bar-nav">
 					<a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
-					<h1 class="mui-title">div模式右滑菜单</h1>
+					<h1 class="mui-title">飞飙科技</h1>
 				</header>
 				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
 					<div class="mui-scroll">
@@ -120,24 +95,6 @@
 
 						</div>
 
-						<form class="mui-input-group" style="margin-bottom: 15px;">
-							<div class="mui-input-row mui-radio">
-								<label>主界面移动、菜单不动</label>
-								<input name="style" type="radio" checked="" value="main-move">
-							</div>
-							<div class="mui-input-row mui-radio">
-								<label>主界面不动、菜单移动</label>
-								<input name="style" type="radio" value="menu-move">
-							</div>
-							<div class="mui-input-row mui-radio mui-hidden" id="move-togger">
-								<label>整体移动</label>
-								<input name="style" type="radio" value="all-move">
-							</div>
-							<div class="mui-input-row mui-radio">
-								<label>缩放式侧滑（类手机QQ）</label>
-								<input name="style" type="radio" value="main-move-scalable">
-							</div>
-						</form>
 
 					</div>
 				</div>
@@ -165,38 +122,38 @@
 			//侧滑容器的class列表，增加.mui-slide-in即可实现菜单移动、主界面不动的效果；
 			var classList = offCanvasWrapper[0].classList;
 			//变换侧滑动画移动效果；
-			mui('.mui-input-group').on('change', 'input', function() {
-				if(this.checked) {
-					offCanvasSide.classList.remove('mui-transitioning');
-					offCanvasSide.setAttribute('style', '');
-					classList.remove('mui-slide-in');
-					classList.remove('mui-scalable');
-					switch(this.value) {
-						case 'main-move':
-							if(moveTogether) {
-								//仅主内容滑动时，侧滑菜单在off-canvas-wrap内，和主界面并列
-								offCanvasWrapper[0].insertBefore(offCanvasSide, offCanvasWrapper[0].firstElementChild);
-							}
-							break;
-						case 'main-move-scalable':
-							if(moveTogether) {
-								//仅主内容滑动时，侧滑菜单在off-canvas-wrap内，和主界面并列
-								offCanvasWrapper[0].insertBefore(offCanvasSide, offCanvasWrapper[0].firstElementChild);
-							}
-							classList.add('mui-scalable');
-							break;
-						case 'menu-move':
-							classList.add('mui-slide-in');
-							break;
-						case 'all-move':
-							moveTogether = true;
-							//整体滑动时，侧滑菜单在inner-wrap内
-							offCanvasInner.insertBefore(offCanvasSide, offCanvasInner.firstElementChild);
-							break;
-					}
-					offCanvasWrapper.offCanvas().refresh();
-				}
-			});
+//			mui('.mui-input-group').on('change', 'input', function() {
+//				if(this.checked) {
+//					offCanvasSide.classList.remove('mui-transitioning');
+//					offCanvasSide.setAttribute('style', '');
+//					classList.remove('mui-slide-in');
+//					classList.remove('mui-scalable');
+//					switch(this.value) {
+//						case 'main-move':
+//							if(moveTogether) {
+//								//仅主内容滑动时，侧滑菜单在off-canvas-wrap内，和主界面并列
+//								offCanvasWrapper[0].insertBefore(offCanvasSide, offCanvasWrapper[0].firstElementChild);
+//							}
+//							break;
+//						case 'main-move-scalable':
+//							if(moveTogether) {
+//								//仅主内容滑动时，侧滑菜单在off-canvas-wrap内，和主界面并列
+//								offCanvasWrapper[0].insertBefore(offCanvasSide, offCanvasWrapper[0].firstElementChild);
+//							}
+//							classList.add('mui-scalable');
+//							break;
+//						case 'menu-move':
+//							classList.add('mui-slide-in');
+//							break;
+//						case 'all-move':
+//							moveTogether = true;
+//							//整体滑动时，侧滑菜单在inner-wrap内
+//							offCanvasInner.insertBefore(offCanvasSide, offCanvasInner.firstElementChild);
+//							break;
+//					}
+//					offCanvasWrapper.offCanvas().refresh();
+//				}
+//			});
 			//主界面‘显示侧滑菜单’按钮的点击事件
 			document.getElementById('offCanvasShow').addEventListener('tap', function() {
 				offCanvasWrapper.offCanvas('show');

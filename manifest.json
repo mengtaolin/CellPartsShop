@@ -1,7 +1,7 @@
 {
 	"@platforms": ["android", "iPhone", "iPad"],
 	"id": "H50CC27F2",/*应用的标识，创建应用时自动生成，勿手动修改*/
-	"name": "CellPartsShop",/*应用名称，程序桌面图标名称*/
+	"name": "飞飙手机配件",/*应用名称，程序桌面图标名称*/
 	"version": {
 		"name": "1.0.0",/*应用版本名称*/
 		"code": "83"
@@ -124,6 +124,33 @@
 					"xxhdpi": ""
 				}
 			}
+		}
+	},
+	"dependencies": {
+		"pages": {
+			"index.html": {
+				"resources": [
+					"views/main.html"
+				],
+				"refer": [
+					"views/setting.html",
+					"views/blog.html",
+					"views/news.html"
+				],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"views/subView/offCanvasSide.html",
+				"js/mui.min.js",
+				"css/app.css",
+				"fonts/mui.ttf",
+				"css/mui.min.css",
+				"js/mui.js",
+				"css/mui.css",
+				"README.md"
+			]
 		}
 	}
 }

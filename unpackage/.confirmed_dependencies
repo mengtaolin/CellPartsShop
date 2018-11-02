@@ -1,0 +1,13 @@
+{
+  "index.html": {
+    "resources": [
+      "views/main.html"
+    ],
+    "refer": [
+      "views/main.html",
+      "views/setting.html",
+      "views/blog.html",
+      "views/news.html"
+    ]
+  }
+}
