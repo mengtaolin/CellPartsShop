@@ -47,6 +47,8 @@
 			oa-contact-position {
 				float: left;
 			}
+			
+			
 		</style>
 	</head>
 
@@ -56,15 +58,11 @@
 				<span class="mui-icon mui-icon-home"></span>
 				<span class="mui-tab-label">首页</span>
 			</a>
-			<a class="mui-tab-item" href="#tabbar-with-chat">
-				<span class="mui-icon mui-icon-email"><span class="mui-badge">9</span></span>
-				<span class="mui-tab-label">消息</span>
-			</a>
-			<a class="mui-tab-item" href="#tabbar-with-contact">
+			<a class="mui-tab-item" href="views/blog.html">
 				<span class="mui-icon mui-icon-contact"></span>
 				<span class="mui-tab-label">论坛</span>
 			</a>
-			<a class="mui-tab-item" href="#tabbar-with-map">
+			<a class="mui-tab-item" href="views/setting.html">
 				<span class="mui-icon mui-icon-gear"></span>
 				<span class="mui-tab-label">设置</span>
 			</a>
@@ -72,7 +70,7 @@
 		<script type="text/javascript" charset="utf-8">
 			 //mui初始化
 			mui.init();
-			var subpages = ['views/main.html', 'views/news.html', 'views/blog.html', 'views/setting.html'];
+			var subpages = ['views/main.html', 'views/blog.html', 'views/setting.html'];
 			var subpage_style = {
 				top:"0px",
 				bottom: '48px'
@@ -100,6 +98,7 @@
 			 //选项卡点击事件
 			mui('.mui-bar-tab').on('tap', 'a', function(e) {
 				var targetTab = this.getAttribute('href');
+				console.log(targetTab)
 				if (targetTab == activeTab) {
 					return;
 				}
